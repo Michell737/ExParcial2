@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="container d-flex align-items-center justify-content-center py-3">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <title>Personas por la Ética en el Trato de los Zombis (PETZ)</title>
+</head>
+
+<body>
+
+  <div class="container row">
+    <div class="col-sm-6 offset-sm-6">
+      <h1>Personas por la Ética en el Trato de los Zombis (PETZ)</h1>
+      <a href="registrar" class="btn btn-primary offset-sm-2" role="button">Registrar nuevo zombie</a>
+    </div>
+  </div>
+
+  <main class="container-fluid">
+    
+      <div class="col-12 col-lg-9 py-4">
+        <table class="table">
+          <thead>
+            <tr class ="table-info" align="center">
+              <th scope="col">Nombre</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Fecha y hora</th>
+              <th scope="col">Cantidad zombies registrados</th>
+              <th scope="col">Cantidad infectados</th>
+              <th scope="col">Cantidad desorientados</th>
+              <th scope="col">Cantidad violentados</th>
+              <th scope="col">Cantidad desmayados</th>
+              <th scope="col">Cantidad en transformación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let estado of estados) { %>
+                <tr align="center">
+                  <td><%= estado.nombre_completo %></td>
+                  <td><%= estado.tipo_zombie %></td>
+                  <td><%= estado.fecha_registro %></td>
+                </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+  </main>
+
+  <script src="js/Bootstrap5/js/bootstrap.bundle.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</body>
+
+</html>

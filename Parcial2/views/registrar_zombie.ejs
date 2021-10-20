@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <br>
+    <br>
+    <div class="container-fluid text-center">
+        <h4></h4>
+        <br />
+
+
+        <div class="d-flex justify-content-center h-100">
+            <!-- Main Content -->
+            <div class="col-xs-12 col-lg-9 col-sm-12 col-md-9">
+                <form action="/zombies" method="POST">
+                   <input type="text" name="nombre">
+                    <br>
+                    <select name="id_estado"><!--Importante tener el name en cualquer input de formulario-->
+                        <% for (let estado of estados) { %>
+                            <option value="<%= estado.id_estado %>"><%= estado.tipo_zombie %> </option>
+                            <% } %>
+                    </select><br>
+                    <div class="btn-toolbar justify-content-around" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group" role="group" aria-label="First group">
+                            <button type="submit" class="boton" id="Registrar-Actualizar">Registrar Zombie</button>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- /Main Content -->
+        </div>
+    </div>
+    
+</body>
+</html>

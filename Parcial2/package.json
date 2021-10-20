@@ -1,0 +1,23 @@
+{
+  "name": "examenprueba",
+  "version": "1.0.0",
+  "description": "Examen de prueba JP",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Michell737/ExParcial2.git"
+  },
+  "keywords": [
+    "ExParcial2"
+  ],
+  "author": "Michell Tena",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2"
+  }
+}
