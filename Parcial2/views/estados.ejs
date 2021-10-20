@@ -27,12 +27,10 @@
               <th scope="col">Nombre</th>
               <th scope="col">Estado</th>
               <th scope="col">Fecha y hora</th>
-              <th scope="col">Cantidad zombies registrados</th>
-              <th scope="col">Cantidad infectados</th>
-              <th scope="col">Cantidad desorientados</th>
-              <th scope="col">Cantidad violentados</th>
-              <th scope="col">Cantidad desmayados</th>
-              <th scope="col">Cantidad en transformación</th>
+              <th scope="col">Cantidad zombies registrados  <%= total.total %></th>
+              <% for (let stat of stats) { %>
+              <th scope="col">Cantidad de zombies en <%= stat.tipo_zombie %> :  <%= stat.total %></th>
+              <% } %>
             </tr>
           </thead>
           <tbody>

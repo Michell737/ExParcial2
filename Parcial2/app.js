@@ -15,12 +15,17 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/zombies', (request, response, next) => {
     estado.fetchAll()
     .then((result,field)=>{
+        estado.fetchStats().then(([stats,_]) => {
+            estado.fetchTotal().then(([total,_])=>{
         console.log(result[0])
 
         response.render('../views/estados', {
-            estados: result[0]
+            estados: result[0],
+            stats: stats,
+            total: total[0]
         })
     })
+    })})
     
 });
 
@@ -42,12 +47,19 @@ app.get('/registrar', (request, response, next) => {
 app.post('/zombies', (request, response, next) => {
     let newZombie = new estado(request.body.nombre,request.body.id_estado)
     newZombie.save().then( () => {
-    estado.fetchAll()
+        estado.fetchAll()
     .then((result,field)=>{
+        estado.fetchStats().then(([stats,_]) => {
+            estado.fetchTotal().then(([total,_])=>{
+        console.log(result[0])
+
         response.render('../views/estados', {
-            estados: result[0]
+            estados: result[0],
+            stats: stats,
+            total: total[0]
         })
     })
+    })})
     })
 });
 app.use((request, response, next) => {
